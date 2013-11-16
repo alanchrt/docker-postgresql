@@ -12,4 +12,4 @@ RUN su postgres -c '/usr/lib/postgresql/9.2/bin/postgres --single -c config-file
 RUN echo 'host all all 0.0.0.0/0 md5' >> /etc/postgresql/9.2/main/pg_hba.conf
 
 EXPOSE 5432
-CMD su postgres -c '/usr/lib/postgresql/9.2/bin/postgres -c config-file=/etc/postgresql/9.2/main/postgresql.conf -c listen-addresses=*'
+CMD ["su", "postgres", "-c", "/usr/lib/postgresql/9.2/bin/postgres -c config-file=/etc/postgresql/9.2/main/postgresql.conf -c listen-addresses=*"]
